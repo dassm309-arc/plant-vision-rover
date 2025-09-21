@@ -1,0 +1,38 @@
+Project Summary: From Zero to a Working AI Demo
+1. Initial Setup (Environment)
+Installed Git: We confirmed Git was installed on your Mac.
+
+Installed Homebrew: We installed the Homebrew package manager to fix an error with your terminal's startup file.
+
+Created a GitHub Repository: We created a fresh, new repository on GitHub named plant-vision-rover, complete with a README, a Python .gitignore file, and an MIT LICENSE.
+
+Cloned the Repository: We cloned the repository from GitHub to your local computer, creating the plant-vision-rover project folder.
+
+2. Building the Project Foundation
+Created a Virtual Environment: Inside the project folder, we created a Python virtual environment (venv) to keep all your project's software dependencies isolated.
+
+Created requirements.txt: We created this file and listed all the necessary Python libraries (TensorFlow, OpenCV, etc.).
+
+Installed Libraries: We successfully installed all the required libraries into your virtual environment using pip install -r requirements.txt.
+
+Troubleshot Jupyter: We fixed the command not found error by installing the requirements and resolved a kernel crashing issue by force-reinstalling a stable version of ipykernel.
+
+3. Creating the AI Model
+Gathered a Dataset: You downloaded the PlantVillage dataset, selected only the images for Corn, and organized them into healthy and diseased folders.
+
+Trained the AI Model: We created a Jupyter Notebook (disease_classifier.ipynb) and used a Convolutional Neural Network (CNN) to train a model on your corn dataset. The training was successful, achieving high accuracy.
+
+Saved the Model: The successfully trained model was saved to the file ai_model/models/corn_disease_classifier.h5.
+
+Tested the Model: We created a second script (test_model.ipynb) to load your saved model and test its predictive accuracy on single images, confirming it worked correctly.
+
+4. Building the Live Demo & Finalizing
+Created a Live Video Script: We wrote the live_video_test.py script, which uses OpenCV to access your webcam, runs your AI model on the live video feed in real time, and displays the prediction on the screen.
+
+Troubleshot Webcam Access: We fixed the macOS privacy settings to allow the terminal to access the camera and resolved the "Failed to grab frame" error by ensuring no other apps (like Google Meet) were using the webcam.
+
+Solved the Large File Issue: We fixed GitHub's 100 MB file size limit error by installing Git Large File Storage (LFS), configuring it to track .h5 files, and rewriting the Git history to push your large model file successfully.
+
+Completed Project Documentation: We created a professional README.md, a CONTRIBUTING.md, and a LICENSE file to complete your repository.
+
+Gave Teammate Access: We went through the steps to add your teammates as collaborators on your GitHub repository.
