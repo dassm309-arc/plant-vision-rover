@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Agri-Sense Rover - Software Simulation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; text-align: center; background: #f4f4f4; }
+        .container { max-width: 800px; margin: 1rem auto; padding: 10px; background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1 { color: #333; }
+        img { border: 2px solid #ddd; margin-bottom: 15px; width: 100%; max-width: 640px; border-radius: 5px; }
+        .controls, .actions { display: grid; max-width: 400px; margin: 10px auto; gap: 10px; }
+        .controls { grid-template-columns: 1fr 1fr 1fr; }
+        .actions { grid-template-columns: 1fr 1fr; }
+        button { padding: 15px; font-size: 18px; border-radius: 8px; border: none; background: #007bff; color: white; cursor: pointer; }
+        button:active { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Agri-Sense Rover - Software Simulation</h1>
+        <img src="/video_feed">
+        <div class="controls">
+            <div></div>
+            <button onclick="sendCommand('Move Forward')">▲</button>
+            <div></div>
+            <button onclick="sendCommand('Turn Left')">◄</button>
+            <button onclick="sendCommand('Stop')">STOP</button>
+            <button onclick="sendCommand('Turn Right')">►</button>
+            <div></div>
+            <button onclick="sendCommand('Move Backward')">▼</button>
+            <div></div>
+        </div>
+        <div class="actions">
+            <button onclick="sendCommand('Toggle Frame')">Frame</button>
+            <button onclick="sendCommand('Toggle Wheel Angle')">Wheel Angle</button>
+        </div>
+    </div>
+    <script>
+        function sendCommand(cmd) {
+            fetch('/control/' + cmd);
+            console.log('Simulated command:', cmd);
+        }
+    </script>
+</body>
+</html>
